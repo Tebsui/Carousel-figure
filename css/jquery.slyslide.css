@@ -3,27 +3,19 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
-body, ul, li {
-	margin: 0;
-	padding: 0;
-}
 
-body {
-	font-size: 13px;
-	background-color: black;
-	color: white;
-}
 
-#box {
+.sly-slide  {
 	/* 两个 section (上一张/下一张) 要做相对定位*/
 	position: relative;
 	width: 754px;
 	height: 292px;
 	margin: 115px auto 0;
+	font-size: 13px;
 	/*overflow: hidden;*/
 }
 
-#box section.prev,#box section.next {
+.sly-slide .sly-prev,.sly-next{
 	position: absolute;
 	top:calc(50% - 30px);
 	width: 60px;
@@ -33,23 +25,25 @@ body {
 	cursor: pointer;
 }
 
-#box .prev {
+.sly-slide .sly-prev {
 	left: -80px;
 }
 
-#box .next {
+.sly-slide .sly-next {
 	right: -80px;
 }
 
-#box ul {
+.sly-slide ul {
 	/*让 7个 li 相对父标签做绝对定位*/
 	position: relative;
 	width: 754px;
 	height: 292px;	
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-#box ul li {
+.sly-slide ul li {
 	width:  0;
 	height: 0;
 	position: absolute;
@@ -63,7 +57,7 @@ body {
 	cursor: pointer;
 }
 
-#box ul li img {
+.sly-slide ul li img {
 	width: 100%;
 	height: 100%;
 }
