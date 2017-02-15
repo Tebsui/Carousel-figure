@@ -1,0 +1,69 @@
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 13px;
+	background-color: black;
+	color: white;
+}
+
+#box {
+	/* 两个 section (上一张/下一张) 要做相对定位*/
+	position: relative;
+	width: 754px;
+	height: 292px;
+	margin: 115px auto 0;
+	/*overflow: hidden;*/
+}
+
+#box section.prev,#box section.next {
+	position: absolute;
+	top:calc(50% - 30px);
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#box .prev {
+	left: -80px;
+}
+
+#box .next {
+	right: -80px;
+}
+
+#box ul {
+	/*让 7个 li 相对父标签做绝对定位*/
+	position: relative;
+	width: 754px;
+	height: 292px;	
+	list-style: none;
+}
+
+#box ul li {
+	width:  0;
+	height: 0;
+	position: absolute;
+	border: 2px solid black;
+	background-color: black;
+	top: 146px;
+	left: 377px;
+	border-radius: 10px;
+	z-index:0;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#box ul li img {
+	width: 100%;
+	height: 100%;
+}
