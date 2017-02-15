@@ -18,6 +18,11 @@
 		};
 		$.extend(true, setting, options);
 		
+		if(setting.delay > setting.speed){
+			setting.delay = setting.delay + setting.speed;
+			setting.speed = setting.delay - setting.speed;
+			setting.delay = setting.delay - setting.speed;
+		}
 			// 先规定好每张图片处于的位置和状态
 		var states = [
 			{ ZIndex: 1, width: 120, height: 150, top: 69, left: 134, Opacity: 0.2 },

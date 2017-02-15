@@ -1,0 +1,95 @@
+
+
+ API 接口说明：
+ 		用户如果想使用 这个插件需要在 下载的文件夹里 创建 一个 .html 文件 和 .js 文件
+  	(一)1.首先 我们 需要在新创建的 .html 文件的 head 标签里 引入 jquery.slyslide.css 文件
+  		
+  		导入 css 文件如下: <link rel="stylesheet" href="css/jquery.slide.css"/> 
+  		
+  		2.还需要在这个 .html 文件的底部需要导入 jquery.js , jquery.slyslide.js 和 新建的 .js 文件 
+  		注意：jquery.js 必须在 jquery.slyslide.js 文件之前引入 ,否则 轮播图将无法正常演示.
+  	   
+	  	    导入 js 文件如下: <srcipt src="libs/jquery.js">
+	  	            <script src="js/jquery.slyslide.js">
+  					 <script src="新建的.js>					------新建的 js 文件
+  	(二).接着我们就可以在 .html 文件的 body 标签 你想要显示的轮播图的区域里 写代码了:
+  	步骤如下:
+	 	1.在 html 页面上 在 做轮播的根标签上 添加 class="sly-slide",这个 class 用来设置轮播图的外部样式
+	 		
+	 		例如: <div class="sly-slide"></div>
+	 		
+	 	2.在 轮播图的根标签的里面 需要添加两个 section 子标签 ，这两个标签的作用是 当我们点击时，会返回上一张图片或者是下一张图片
+	 		如果是 想查看 上一张图片 需要其中一个 section 标签上添加 class="sly-prev" 这个 class 的作用是 用来设置
+	 		点击查看上一张图片按钮的样式 和 用来添加事件;
+	 		如果是想查看 下一张图片 则需要在另外一个 section 标签上添加 class ="sly-next" 这个 class 的作用是 用来设置
+	 		点击查看下一张图片按钮的样式 和 用来添加事件;;
+	 		
+	 		例如 :<section class="sly-prev"></section>
+	 			<section class="sly-next"></section>
+	 			
+	 	3.在轮播图的根标签里 需要再 添加 1个 ul 标签 和 7个 li 标签
+	 		
+	 		例如：<ul>
+		 			<li></li>
+		 			<li></li>
+		 			<li></li>
+		 			<li></li>
+		 			<li></li>
+		 			<li></li>
+		 			<li></li>
+	 			 </ul>
+	 	 
+	 	    并且需要在 li 标签里 创建 img 子标签   在 img 标签的 src 属性里填写 存放你想展示的图片的路径 
+	 	    如果是放在 同一文件夹里 则写 ： <img src="图片名">
+		
+		 	例如：<ul>
+		 			<li><img src="xxx.jpg/png"></li>
+		 			<li><img src="xxx.jpg/png"></li>
+		 			<li><img src="xxx.jpg/png"></li>
+		 			<li><img src="xxx.jpg/png"></li>
+		 			<li><img src="xxx.jpg/png"></li>
+		 			<li><img src="xxx.jpg/png"></li>
+		 			<li><img src="xxx.jpg/png"></li>	 			
+	 			 </ul> 
+	 	4.保存
+	 	
+	 	5.如果想在 同一个 .html 的文件里多创建几个 轮播图 ,则 重复以上 四个步骤 即可。		 	
+    (三) 接下来在我们新建的 js 文件里
+		1.需要调用一个 slyslide()方法 才能实现功能 
+		  由于这是通过 jQuery 封装的插件所以我们需要使用 $ 标识符来帮助我们
+		
+		代码如下:  $.fn.slyslide();
+			
+			注: 这里的 fn 是 显示轮播图区域的 根标签， 我们可以通过标签名、 class 和 id 等标识 来找到 轮播图的根标签
+			如: 1.轮播图的根标签是div			  	则：$("div").slyslide();
+			    2.轮播图根标签的 class 是 sly-slide  则：$(".sly-slide").slyslide();
+			    3.轮播图根标签的 id 是 	slide       则：$("#slide").slyslide();
+				...
+		2.我们还可以给 slyslide() 传参数来控制 动画效果播放的速度
+			
+			delay: 设置 轮播图开场的动画速度  			单位为 ms
+			speed: 设置轮播图轮转的速度 		     	单位为 ms
+			
+			如:$(".sly-slide").slyslide({delay:1000,speed: 2000});
+			
+		
+		
+		提示：如果不想使用 $ 这个符号 可以  编写代码 jQuery.noConflict() 放弃 $ 的使用权,运行这句代码以后，
+		只能 用 jQuery 来代替 $;或者与别的插件发生冲突时，亦可如此解决。
+		 
+		 则代码如下 : jQuery.fn.slyslide();
+
+
+	(四) 打开浏览器查看效果
+
+
+
+
+
+
+
+
+
+
+
+
