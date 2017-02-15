@@ -3,6 +3,9 @@
 jQuery.noConflict();
 
 // slyslide() 只要轮播图的根标签(任何选择器)
-jQuery(".sly-slide").slyslide();
+
+jQuery(".slide").slyslide({speed:1000});
+jQuery("#slide").slyslide({delay:2000,speed:3000});
+
 
 

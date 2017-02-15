@@ -4,7 +4,7 @@
 	// 也就说只会产生一个轮播图，这个函数的作用域只能分配给一个轮播图
 	// 所以要求在调用本函数的时候 务必把当前轮播图的根标签传递过来
 	// 这里的形参 ele 就是某个轮播图的根标签
-	var slide = function(ele){
+	var slide = function(ele,options){
 		// 转化为 jQuery 标签对象
 		
 		var $ele = $(ele);
@@ -16,7 +16,8 @@
 			// 控制 interval 的时间 (轮播速度)
 			speed: 2000
 		};
-
+		$.extend(true, setting, options);
+		
 			// 先规定好每张图片处于的位置和状态
 		var states = [
 			{ ZIndex: 1, width: 120, height: 150, top: 69, left: 134, Opacity: 0.2 },
@@ -86,9 +87,9 @@
 //			slide($(this));
 //		})
 		// $.fn jquery封装插件的方法 fn 标签选择器
-		$.fn.slyslide = function(){
+		$.fn.slyslide = function(options){
 			$(this).each(function(i,ele){
-				slide(ele);
+				slide(ele,options);
 			});
 		}
 		
